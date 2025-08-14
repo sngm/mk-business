@@ -3,27 +3,31 @@
 // 1. Include functions first
 @import "../../node_modules/bootstrap/scss/functions";
 
-// 2. Include here any default variable overrides
+// 2. Dark Mode First - Override Bootstrap variables BEFORE importing them
 $primary: #5046E7;
 
-// Light theme as default
-$body-bg: #ffffff;
-$body-color: #212529;
+// Custom dark colors for our specific components
+$black: #000000;
+$dark: #0f0f0f;
 
-// Dark theme overrides (Bootstrap handles this automatically)
-$dark: #1a1a1a;
-$secondary: #6c757d;
+// Override specific gray values for our secondary backgrounds
+$gray-100: #f8f9fa; // Light mode bg-body-secondary
+$gray-900: #121217; // Dark mode bg-body-secondary
 
-// 3. Include remainder of required Bootstrap stylesheets
+// 3. Include Bootstrap variables AFTER our overrides
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/variables-dark";
 
-// 4. Include any default map overrides here
-
-// 5. Include remainder of required parts
+// 4. Include remainder of required parts
 @import "../../node_modules/bootstrap/scss/maps";
 @import "../../node_modules/bootstrap/scss/mixins";
 @import "../../node_modules/bootstrap/scss/root";
+
+// Override only dark mode secondary color
+[data-bs-theme="dark"] {
+	--bs-secondary: #1A1921;
+	--bs-secondary-rgb: 26, 25, 33;
+}
 
 // Custom variables
 $process-step-opacity: (

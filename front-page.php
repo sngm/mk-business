@@ -42,7 +42,7 @@ get_header();
     </section>
 
     <!-- Process Steps -->
-    <section class="process py-5">
+    <section class="process bg-body-secondary py-5">
         <div class="container">
             <h2 class="text-center mb-5">Neue Website - wie funktioniert das jetzt?</h2>
             <?php get_template_part('template-parts/process-steps'); ?>

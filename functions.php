@@ -78,18 +78,6 @@ function enqueue_assets(): void
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets');
 
 /**
- * Add data-bs-theme attribute to html element
- */
-function add_theme_data_attribute(): void
-{
-	$theme_mode = get_theme_mod('mkb_theme_mode', 'auto');
-
-	if ($theme_mode !== 'auto') {
-		echo ' data-bs-theme="' . esc_attr($theme_mode) . '"';
-	}
-}
-
-/**
  * Setup Customizer
  */
 function customize_register(\WP_Customize_Manager $wp_customize): void
@@ -101,19 +89,32 @@ function customize_register(\WP_Customize_Manager $wp_customize): void
 	]);
 
 	$wp_customize->add_setting('mkb_theme_mode', [
-		'default'           => 'auto',
+		'default'           => 'dark',
 		'sanitize_callback' => 'sanitize_key',
 	]);
 
 	$wp_customize->add_control('mkb_theme_mode', [
-		'label'   => esc_html__('Theme Mode', 'mk-business'),
-		'section' => 'mkb_theme_mode',
-		'type'    => 'select',
-		'choices' => [
-			'auto'  => esc_html__('Auto (System)', 'mk-business'),
+		'label'       => esc_html__('Theme Mode', 'mk-business'),
+		'description' => esc_html__('Dark mode is the default. Light mode can be selected manually.', 'mk-business'),
+		'section'     => 'mkb_theme_mode',
+		'type'        => 'select',
+		'choices'     => [
+			'dark'  => esc_html__('Dark (Default)', 'mk-business'),
 			'light' => esc_html__('Light', 'mk-business'),
-			'dark'  => esc_html__('Dark', 'mk-business'),
+			'auto'  => esc_html__('Auto (System)', 'mk-business'),
 		],
 	]);
 }
 add_action('customize_register', __NAMESPACE__ . '\customize_register');
+
+/**
+ * Add data-bs-theme attribute to html element
+ */
+function add_theme_data_attribute(): void
+{
+	$theme_mode = get_theme_mod('mkb_theme_mode', 'dark');
+
+	if ($theme_mode !== 'auto') {
+		echo ' data-bs-theme="' . esc_attr($theme_mode) . '"';
+	}
+}

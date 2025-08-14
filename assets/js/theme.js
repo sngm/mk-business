@@ -27,7 +27,8 @@ class ThemeMode {
 		if (storedTheme) {
 			return storedTheme;
 		}
-		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+		// Dark mode first - default to dark if no preference
+		return 'dark';
 	}
 
 	setTheme(theme) {
