@@ -28,6 +28,7 @@
 - Strikte Types (`declare(strict_types=1);`).
 - PHPDoc bei Public APIs/Hooks.
 - PHP, JS (ESM), SCSS bevorzugt.
+- Benutze immer Tabs als Einzug mit 4 Leerzeichen.
 
 ## WordPress-Standards
 - Styles/Scripts mit `wp_register_style|script` und Handles `mkb-…`.
