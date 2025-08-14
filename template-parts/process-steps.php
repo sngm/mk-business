@@ -24,15 +24,19 @@ $steps = [
 ];
 ?>
 
-<div class="row g-4">
-    <?php foreach ($steps as $step): ?>
-        <div class="col-md-4">
-            <div class="process-step text-center position-relative">
-                <div class="step-number display-1 text-primary mb-3">
-                    <?php echo esc_html($step['number']); ?>
+<div class="process-steps">
+    <?php foreach ($steps as $index => $step): ?>
+        <div class="mkb-process-step process-step-<?php echo esc_attr($index + 1); ?> p-4 mb-4 rounded-3">
+            <div class="row align-items-center">
+                <div class="col-3 col-md-2">
+                    <div class="step-number display-1 text-white text-center">
+                        <?php echo esc_html($step['number']); ?>
+                    </div>
                 </div>
-                <h3 class="h4 mb-3"><?php echo esc_html($step['title']); ?></h3>
-                <p class="mb-0"><?php echo esc_html($step['description']); ?></p>
+                <div class="col-9 col-md-10">
+                    <h3 class="h4 text-white mb-2"><?php echo esc_html($step['title']); ?></h3>
+                    <p class="text-white-50 mb-0"><?php echo esc_html($step['description']); ?></p>
+                </div>
             </div>
         </div>
     <?php endforeach; ?>

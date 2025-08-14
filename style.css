@@ -13,13 +13,45 @@ Text Domain: mk-business
 */
 
 :root {
-    --mkb-primary: #5046E7;
-    --mkb-dark: #1a1a1a;
+    --bs-primary: #5046E7;
+    --bs-primary-rgb: 80, 70, 231;
+    --bs-dark: #1a1a1a;
+    --bs-dark-rgb: 26, 26, 26;
+    --bs-secondary: #2a2a2a;
+    --bs-secondary-rgb: 42, 42, 42;
+    --bs-body-color: #ffffff;
+    --bs-body-bg: var(--bs-dark);
 }
 
 body {
-    background-color: var(--mkb-dark);
-    color: #ffffff;
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+}
+
+/* Section Backgrounds */
+.bg-primary {
+    background-color: var(--bs-primary) !important;
+}
+
+.bg-light {
+    background-color: var(--bs-secondary) !important;
+}
+
+/* Cards & Content Areas */
+.card,
+.service-item,
+.mkb-contact-form-wrapper,
+.mkb-contact-info {
+    background-color: var(--bs-secondary);
+    border: none;
+}
+
+/* Text colors for dark theme */
+.card-title,
+.card-text,
+.service-item h3,
+.service-item p {
+    color: var(--bs-body-color);
 }
 
 /* Feature Boxes */
@@ -33,12 +65,12 @@ body {
 
 .features .card .bi {
     font-size: 2.5rem;
-    color: var(--mkb-primary);
+    color: var(--bs-primary);
 }
 
 /* Ensure text contrast for WCAG AA */
 .features .card-title {
-    color: var(--mkb-dark);
+    color: var(--bs-dark);
     margin-bottom: 1rem;
 }
 
@@ -76,13 +108,13 @@ body {
 
 .mkb-form-input:focus,
 .mkb-form-textarea:focus {
-    border-color: var(--mkb-primary);
+    border-color: var(--bs-primary);
     outline: none;
     box-shadow: 0 0 0 0.2rem rgba(80, 70, 231, 0.25);
 }
 
 .mkb-form-submit {
-    background: var(--mkb-primary);
+    background: var(--bs-primary);
     color: white;
     border: none;
     padding: var(--mkb-input-padding);
@@ -107,15 +139,41 @@ body {
 }
 
 .mkb-contact-list a {
-    color: var(--mkb-dark);
+    color: var(--bs-dark);
     transition: color 0.2s ease-in-out;
 }
 
 .mkb-contact-list a:hover {
-    color: var(--mkb-primary);
+    color: var(--bs-primary);
 }
 
-/* Accessibility */
+/* Process Steps */
+.mkb-process-step {
+    transition: transform 0.2s ease-in-out;
+}
+
+.mkb-process-step:hover {
+    transform: translateX(10px);
+}
+
+.process-step-1 {
+    background-color: rgba(var(--bs-primary-rgb), 0.9);
+}
+
+.process-step-2 {
+    background-color: rgba(var(--bs-primary-rgb), 0.7);
+}
+
+.process-step-3 {
+    background-color: rgba(var(--bs-primary-rgb), 0.5);
+}
+
+.mkb-process-step .step-number {
+    font-size: 5rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
 @media (prefers-reduced-motion: reduce) {
     .features .card {
         transition: none;
@@ -128,6 +186,10 @@ body {
     }
 
     .mkb-contact-list a {
+        transition: none;
+    }
+
+    .mkb-process-step {
         transition: none;
     }
 }
