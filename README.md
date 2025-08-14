@@ -1,0 +1,1 @@
+A classic wordpress theme with bootsrap 5. It's for my private use, but if you like it - use it 🤗
