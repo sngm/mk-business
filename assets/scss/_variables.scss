@@ -1,0 +1,30 @@
+@use "sass:color";
+
+// 1. Include functions first
+@import "../../node_modules/bootstrap/scss/functions";
+
+// 2. Include here any default variable overrides
+$primary: #3A27CC;
+$dark: #1a1a1a;
+$secondary: #2a2a2a;
+$body-bg: $dark;
+$body-color: #ffffff;
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../../node_modules/bootstrap/scss/variables";
+
+// 4. Include any default map overrides here
+
+// 5. Include remainder of required parts
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";
+
+// Custom variables
+$process-step-opacity: (
+	1: 0.9,
+	2: 0.7,
+	3: 0.5
+);
+
+$transition-base: all .2s ease-in-out;

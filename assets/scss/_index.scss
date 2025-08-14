@@ -1,0 +1,20 @@
+@use '../../node_modules/bootstrap/scss/functions';
+@use '../../node_modules/bootstrap/scss/variables';
+@use '../../node_modules/bootstrap/scss/maps';
+@use '../../node_modules/bootstrap/scss/mixins';
+@use '../../node_modules/bootstrap/scss/utilities';
+
+// Bootstrap color system overrides
+$primary: #5046E7 !default;
+$dark: #1a1a1a !default;
+$secondary: #2a2a2a !default;
+$body-bg: $dark !default;
+$body-color: #ffffff !default;
+
+// Custom variables
+$process-step-opacity: (
+	1: 0.9,
+	2: 0.7,
+	3: 0.5) !default;
+
+$transition-base: all .2s ease-in-out !default;

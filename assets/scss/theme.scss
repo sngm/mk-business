@@ -1,0 +1,75 @@
+@import "variables";
+
+// 6. Optionally include any other parts as needed
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/type";
+@import "../../node_modules/bootstrap/scss/containers";
+@import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/card";
+@import "../../node_modules/bootstrap/scss/buttons";
+@import "../../node_modules/bootstrap/scss/nav";
+@import "../../node_modules/bootstrap/scss/navbar";
+@import "../../node_modules/bootstrap/scss/accordion";
+@import "../../node_modules/bootstrap/scss/forms";
+@import "../../node_modules/bootstrap/scss/transitions";
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "../../node_modules/bootstrap/scss/utilities/api";
+
+// Components
+.card,
+.service-item,
+.mkb-contact-form-wrapper,
+.mkb-contact-info {
+	background-color: $secondary;
+	border: none;
+}
+
+.features {
+	.card {
+		transition: $transition-base;
+
+		&:hover {
+			transform: translateY(-5px);
+		}
+
+		.bi {
+			font-size: 2.5rem;
+			color: $primary;
+		}
+	}
+}
+
+.mkb-process-step {
+	transition: $transition-base;
+
+	&:hover {
+		transform: translateX(10px);
+	}
+
+	.step-number {
+		font-size: 5rem;
+		font-weight: bold;
+		line-height: 1;
+		color: $white;
+	}
+
+	@each $step, $opacity in $process-step-opacity {
+		&.process-step-#{$step} {
+			background-color: rgba($primary, $opacity);
+		}
+	}
+}
+
+// Reduced Motion
+@media (prefers-reduced-motion: reduce) {
+
+	.features .card,
+	.mkb-process-step,
+	.mkb-form-input,
+	.mkb-form-textarea,
+	.mkb-form-submit {
+		transition: none;
+	}
+}
