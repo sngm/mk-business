@@ -2,10 +2,11 @@
 Theme Name: MK Business
 Theme URI: https://example.com/mk-business
 Author: Your Name
+Author URI: https://example.com
 Description: A modern business theme with Bootstrap 5
 Version: 1.0.0
 Requires at least: 6.8
-Requires PHP: 8.2
+Requires PHP: 8.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: mk-business
@@ -19,4 +20,114 @@ Text Domain: mk-business
 body {
     background-color: var(--mkb-dark);
     color: #ffffff;
+}
+
+/* Feature Boxes */
+.features .card {
+    transition: transform 0.2s ease-in-out;
+}
+
+.features .card:hover {
+    transform: translateY(-5px);
+}
+
+.features .card .bi {
+    font-size: 2.5rem;
+    color: var(--mkb-primary);
+}
+
+/* Ensure text contrast for WCAG AA */
+.features .card-title {
+    color: var(--mkb-dark);
+    margin-bottom: 1rem;
+}
+
+.features .card-text {
+    color: #4a4a4a;
+    /* Ensures 4.5:1 contrast ratio */
+}
+
+/* Contact Form Styles */
+.mkb-contact-form-wrapper {
+    --mkb-form-spacing: 1.5rem;
+    --mkb-input-padding: 0.75rem 1rem;
+    --mkb-input-border: 1px solid #dee2e6;
+    --mkb-input-radius: 0.375rem;
+}
+
+/* JetFormBuilder Custom Styles */
+.mkb-form {
+    display: grid;
+    gap: var(--mkb-form-spacing);
+}
+
+.mkb-form-row {
+    margin-bottom: var(--mkb-form-spacing);
+}
+
+.mkb-form-input,
+.mkb-form-textarea {
+    width: 100%;
+    padding: var(--mkb-input-padding);
+    border: var(--mkb-input-border);
+    border-radius: var(--mkb-input-radius);
+    transition: border-color 0.2s ease-in-out;
+}
+
+.mkb-form-input:focus,
+.mkb-form-textarea:focus {
+    border-color: var(--mkb-primary);
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(80, 70, 231, 0.25);
+}
+
+.mkb-form-submit {
+    background: var(--mkb-primary);
+    color: white;
+    border: none;
+    padding: var(--mkb-input-padding);
+    border-radius: var(--mkb-input-radius);
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.mkb-form-submit:hover {
+    background: #4038c2;
+}
+
+.mkb-form-error {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Contact Info Styles */
+.mkb-contact-info .bi {
+    font-size: 1.5rem;
+}
+
+.mkb-contact-list a {
+    color: var(--mkb-dark);
+    transition: color 0.2s ease-in-out;
+}
+
+.mkb-contact-list a:hover {
+    color: var(--mkb-primary);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .features .card {
+        transition: none;
+    }
+
+    .mkb-form-input,
+    .mkb-form-textarea,
+    .mkb-form-submit {
+        transition: none;
+    }
+
+    .mkb-contact-list a {
+        transition: none;
+    }
 }
