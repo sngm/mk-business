@@ -1,0 +1,22 @@
+/*
+Theme Name: MK Business
+Theme URI: https://example.com/mk-business
+Author: Your Name
+Description: A modern business theme with Bootstrap 5
+Version: 1.0.0
+Requires at least: 6.8
+Requires PHP: 8.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: mk-business
+*/
+
+:root {
+    --mkb-primary: #5046E7;
+    --mkb-dark: #1a1a1a;
+}
+
+body {
+    background-color: var(--mkb-dark);
+    color: #ffffff;
+}
