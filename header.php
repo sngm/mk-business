@@ -1,10 +1,12 @@
 <?php
 declare(strict_types=1);
 
-if (!defined('ABSPATH')) exit;
+if (!defined('ABSPATH')) {
+	exit;
+}
 ?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?><?php \MKB\add_theme_data_attribute(); ?>>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,8 +19,8 @@ if (!defined('ABSPATH')) exit;
     <?php esc_html_e('Skip to content', 'mk-business'); ?>
 </a>
 
-<header class="site-header bg-dark">
-    <nav class="navbar navbar-expand-lg navbar-dark">
+<header class="site-header">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
             <?php if (has_custom_logo()): ?>
                 <div class="navbar-brand">
@@ -36,18 +38,31 @@ if (!defined('ABSPATH')) exit;
 
             <div class="collapse navbar-collapse" id="primaryNav">
                 <?php
-                wp_nav_menu([
-                    'theme_location' => 'primary',
-                    'container' => false,
-                    'menu_class' => 'navbar-nav ms-auto',
-                    'fallback_cb' => false,
-                    'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                    'depth' => 2,
-                ]);
-                ?>
+				wp_nav_menu([
+					'theme_location' => 'primary',
+					'container'      => false,
+					'menu_class'     => 'navbar-nav me-auto',
+					'fallback_cb'    => false,
+					'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+					'depth'          => 2,
+				]);
+?>
+                
+                <!-- Theme Mode Toggle -->
+                <div class="mkb-theme-toggle ms-3">
+                    <button type="button" 
+                            class="btn btn-outline-secondary" 
+                            id="mkb-theme-toggle"
+                            aria-label="<?php esc_attr_e('Toggle theme mode', 'mk-business'); ?>">
+                        <i class="bi bi-circle-half" aria-hidden="true"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
+</header>
+
+<main id="main" class="site-main">
 </header>
 
 <main id="main" class="site-main">

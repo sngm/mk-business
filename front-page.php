@@ -50,7 +50,7 @@ get_header();
     </section>
 
     <!-- Services Grid -->
-    <section class="services bg-light py-5">
+    <section class="services py-5">
         <div class="container">
             <h2 class="text-center mb-5">Was wir noch alles für Sie tun können</h2>
             <?php get_template_part('template-parts/services-grid'); ?>
@@ -58,7 +58,7 @@ get_header();
     </section>
 
     <!-- FAQ Section -->
-    <section class="faq py-5">
+    <section class="faq bg-body-secondary py-5">
         <div class="container">
             <h2 class="text-center mb-5">FAQs zur Erstellung einer Website</h2>
             <?php get_template_part('template-parts/faq-accordion'); ?>

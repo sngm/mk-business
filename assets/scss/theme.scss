@@ -52,7 +52,7 @@
 		font-size: 5rem;
 		font-weight: bold;
 		line-height: 1;
-		color: $white;
+		color: white; // Always white for contrast on colored backgrounds
 	}
 
 	@each $step, $opacity in $process-step-opacity {
@@ -71,5 +71,46 @@
 	.mkb-form-textarea,
 	.mkb-form-submit {
 		transition: none;
+	}
+}
+
+// Theme Mode Specific Styles
+.mkb-theme-toggle {
+	.btn {
+		border: 1px solid var(--bs-border-color);
+
+		&:hover {
+			background-color: var(--bs-secondary-bg);
+		}
+	}
+}
+
+// Dark mode adjustments
+[data-bs-theme="dark"] {
+	.mkb-process-step {
+		// background-color: var(--bs-secondary);
+	}
+
+	.card,
+	.service-item,
+	.mkb-contact-form-wrapper,
+	.mkb-contact-info {
+		background-color: var(--bs-secondary);
+		color: var(--bs-body-color);
+	}
+}
+
+// Light mode adjustments
+[data-bs-theme="light"] {
+	.mkb-process-step {
+		color: white;
+		background-color: var(--bs-secondary);
+	}
+}
+
+// Auto mode (respects system preference)
+@media (prefers-color-scheme: dark) {
+	:root:not([data-bs-theme]) {
+		color-scheme: dark;
 	}
 }
