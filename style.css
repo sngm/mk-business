@@ -8824,5 +8824,24 @@ textarea.form-control-lg {
     justify-content: center;
   }
 }
+.hero-features {
+  list-style: none;
+  padding-left: 0;
+}
+.hero-features li {
+  position: relative;
+  padding-left: 2.2em;
+}
+.hero-features li::before {
+  content: "\f26b";
+  font-family: "bootstrap-icons";
+  font-size: 1.25rem;
+  color: #fff;
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  line-height: 1;
+  vertical-align: middle;
+}
 
 /*# sourceMappingURL=style.css.map */

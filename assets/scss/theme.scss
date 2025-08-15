@@ -170,3 +170,25 @@
 		}
 	}
 }
+
+.hero-features {
+	list-style: none;
+	padding-left: 0;
+
+	li {
+		position: relative;
+		padding-left: 2.2em;
+
+		&::before {
+			content: "\F26B"; // Bootstrap Icons: check-circle-fill
+			font-family: "bootstrap-icons";
+			font-size: 1.25rem;
+			color: #fff;
+			position: absolute;
+			left: 0;
+			top: 0.15em;
+			line-height: 1;
+			vertical-align: middle;
+		}
+	}
+}
