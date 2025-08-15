@@ -6,7 +6,7 @@ if (!defined('ABSPATH')) {
 }
 ?>
 
-<div class="mkb-contact-info bg-white shadow-sm p-4">
+<div class="mkb-contact-info p-4">
     <h3><?php echo esc_html__('Kontaktdaten', 'mk-business'); ?></h3>
     
     <ul class="list-unstyled mkb-contact-list">

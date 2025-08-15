@@ -177,7 +177,7 @@
 }
 
 [data-bs-theme=dark] {
-  --bs-secondary: #1A1921;
+  --bs-secondary: #1a1921;
   --bs-secondary-rgb: 26, 25, 33;
 }
 
