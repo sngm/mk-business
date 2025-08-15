@@ -4,15 +4,21 @@
 @import "../../node_modules/bootstrap/scss/functions";
 
 // 2. Dark Mode First - Override Bootstrap variables BEFORE importing them
-$primary: #5046E7;
+$primary: #3A27CC;
 
 // Custom dark colors for our specific components
-$black: #000000;
+
 $dark: #0f0f0f;
 
 // Override specific gray values for our secondary backgrounds
 $gray-100: #f8f9fa; // Light mode bg-body-secondary
 $gray-900: #121217; // Dark mode bg-body-secondary
+
+// Button styling - Pillenform für alle Buttons
+$btn-border-radius: 50rem !default;
+$btn-border-radius-sm: 50rem !default;
+$btn-border-radius-lg: 50rem !default;
+$btn-font-weight: 700 !default;
 
 // 3. Include Bootstrap variables AFTER our overrides
 @import "../../node_modules/bootstrap/scss/variables";
