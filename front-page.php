@@ -9,25 +9,7 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-    <!-- Hero Section -->
-    <section class="hero bg-primary text-white py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h1 class="display-4">Websites & Online-Shops</h1>
-                    <ul class="list-unstyled">
-                        <li><i class="bi bi-check-lg"></i> Ihr Internetauftritt</li>
-                        <li><i class="bi bi-check-lg"></i> Ihre Serviceleistungen</li>
-                        <li><i class="bi bi-check-lg"></i> Ihre Akquise und Projekte</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-light">Kontakt aufnehmen</a>
-                </div>
-                <div class="col-md-6">
-                    <?php echo wp_get_attachment_image(get_theme_mod('hero_image'), 'full', false, ['class' => 'img-fluid']); ?>
-                </div>
-            </div>
-        </div>
-    </section>
+    <?php get_template_part('template-parts/hero-section'); ?>
 
     <!-- Feature Boxes -->
     <section class="features py-5">

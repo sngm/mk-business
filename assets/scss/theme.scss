@@ -102,15 +102,71 @@
 
 // Light mode adjustments
 [data-bs-theme="light"] {
-	.mkb-process-step {
+	/* .mkb-process-step {
 		color: white;
 		background-color: var(--bs-secondary);
-	}
+	} */
 }
 
 // Auto mode (respects system preference)
 @media (prefers-color-scheme: dark) {
 	:root:not([data-bs-theme]) {
 		color-scheme: dark;
+	}
+}
+
+// Hero Section
+.hero {
+	.hero-card {
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+		overflow: hidden;
+	}
+
+	.hero-content {
+		.hero-features {
+			.bi-check-circle-fill {
+				flex-shrink: 0;
+			}
+		}
+	}
+
+	.hero-image {
+		img {
+			max-width: 100%;
+			height: auto;
+			box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+		}
+	}
+
+	.btn-warning {
+		color: var(--bs-dark);
+		border: none;
+		transition: $transition-base;
+
+		&:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+		}
+	}
+}
+
+// Responsive adjustments
+@media (max-width: 991.98px) {
+	.hero {
+		.hero-card {
+			text-align: center;
+		}
+
+		.hero-content {
+			padding-right: 0 !important;
+		}
+
+		.hero-features {
+			justify-content: center;
+
+			.d-flex {
+				justify-content: center;
+			}
+		}
 	}
 }

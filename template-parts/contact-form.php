@@ -15,3 +15,4 @@ if (!defined('ABSPATH')) {
         <?php echo do_shortcode('[jetformbuilder form="FORM_ID"]'); ?>
     </div>
 </div>
+<a href="#" class="btn btn-primary"><?php echo esc_html__('Absenden', 'mk-business'); ?></a>

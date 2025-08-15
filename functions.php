@@ -82,6 +82,23 @@ add_action('wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets');
  */
 function customize_register(\WP_Customize_Manager $wp_customize): void
 {
+	// Hero Section
+	$wp_customize->add_section('mkb_hero', [
+		'title'    => esc_html__('Hero Section', 'mk-business'),
+		'priority' => 25,
+	]);
+
+	$wp_customize->add_setting('hero_image', [
+		'default'           => '',
+		'sanitize_callback' => 'absint',
+	]);
+
+	$wp_customize->add_control(new \WP_Customize_Media_Control($wp_customize, 'hero_image', [
+		'label'     => esc_html__('Hero Image', 'mk-business'),
+		'section'   => 'mkb_hero',
+		'mime_type' => 'image',
+	]));
+
 	// Theme Mode Section
 	$wp_customize->add_section('mkb_theme_mode', [
 		'title'    => esc_html__('Theme Mode', 'mk-business'),
