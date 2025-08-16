@@ -8,14 +8,14 @@ $primary: #3A27CC;
 $primary-gradient: linear-gradient(90deg, $primary 0%, #361466 100%);
 
 // Custom dark colors for our specific components
-$dark: #0f0f0f; // Dark mode body background
-$dark-rgb: 15, 15, 15;
+// $dark: #0f0f0f; // Dark mode body background
+// $dark-rgb: 15, 15, 15;
 
 // Override specific gray values for our secondary backgrounds  
-$gray-100: #f8f9fa; // Light mode bg-body-secondary
-$gray-800: #121217; // Dark mode bg-body-secondary
-$gray-800-rgb: 18, 18, 23;
-$gray-900: #212529; // Bootstrap default, nicht überschreiben mit identischem Wert
+// $gray-100: #f9f8fa; // Light mode bg-body-secondary
+// $gray-800: #121217; // Dark mode bg-body-secondary
+// $gray-800-rgb: 18, 18, 23;
+// $gray-900: #212529; // Bootstrap default, nicht überschreiben mit identischem Wert
 
 // Button styling - Pillenform für alle Buttons
 $btn-border-radius: 50rem !default;
@@ -50,18 +50,3 @@ $utilities: map-merge($utilities,
 		("gradient-primary": (property: background-image,
 				class: bg-gradient,
 				values: (primary: $primary-gradient))));
-
-/* [data-bs-theme="light"] {
-	--bs-body-bg: #{$white};
-	--bs-body-color: #{$gray-800};
-}
-
-[data-bs-theme="dark"] {
-	--bs-body-bg: #{$dark};
-	--bs-body-bg-rgb: #{$dark-rgb};
-	--bs-secondary-bg: #{$gray-800};
-	--bs-secondary-bg-rgb: #{$gray-800-rgb};
-	--bs-secondary: #1a1921;
-	--bs-secondary-rgb: 26, 25, 33;
-	--bs-body-color: #dee2e6;
-} */
