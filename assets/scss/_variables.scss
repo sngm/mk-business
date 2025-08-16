@@ -1,6 +1,8 @@
 // 1. Include functions first
 @import "../../node_modules/bootstrap/scss/functions";
 
+
+
 // 2. Dark Mode First - Override Bootstrap variables BEFORE importing them
 $primary: #3A27CC;
 $primary-gradient: linear-gradient(90deg, $primary 0%, #361466 100%);
@@ -23,7 +25,8 @@ $btn-font-weight: 700 !default;
 
 // 3. Include Bootstrap variables AFTER our overrides
 @import "../../node_modules/bootstrap/scss/variables";
-@import "../../node_modules/bootstrap/scss/variables-dark";
+@import "variables-dark";
+//@import "../../node_modules/bootstrap/scss/variables-dark";
 
 // 4. Include remainder of required parts
 @import "../../node_modules/bootstrap/scss/maps";
