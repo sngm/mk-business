@@ -6,7 +6,7 @@ if (!defined('ABSPATH')) {
 }
 ?>
 
-<div class="card bg-primary text-white rounded-4 shadow-lg border-0">
+<div class="card bg-gradient-primary text-white rounded-4 shadow-lg border-0">
 	<div class="row align-items-center g-0">
 		<div class="col-md-8">
 			<div class="p-5">

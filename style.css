@@ -176,21 +176,20 @@
   --bs-form-invalid-border-color: rgb(234, 133.8, 143.4);
 }
 
-[data-bs-theme=light] {
-  --bs-body-bg: #fff;
-  --bs-body-color: #121217;
+/* [data-bs-theme="light"] {
+	--bs-body-bg: #fff;
+	--bs-body-color: #121217;
 }
 
-[data-bs-theme=dark] {
-  --bs-body-bg: #0f0f0f;
-  --bs-body-bg-rgb: 15, 15, 15;
-  --bs-secondary-bg: #121217;
-  --bs-secondary-bg-rgb: 18, 18, 23;
-  --bs-secondary: #1a1921;
-  --bs-secondary-rgb: 26, 25, 33;
-  --bs-body-color: #dee2e6;
-}
-
+[data-bs-theme="dark"] {
+	--bs-body-bg: #0f0f0f;
+	--bs-body-bg-rgb: 15, 15, 15;
+	--bs-secondary-bg: #121217;
+	--bs-secondary-bg-rgb: 18, 18, 23;
+	--bs-secondary: #1a1921;
+	--bs-secondary-rgb: 26, 25, 33;
+	--bs-body-color: #dee2e6;
+} */
 *,
 *::before,
 *::after {
@@ -5920,6 +5919,10 @@ textarea.form-control-lg {
 
 .z-3 {
   z-index: 3 !important;
+}
+
+.bg-gradient-primary {
+  background-image: linear-gradient(90deg, #3A27CC 0%, #361466 100%) !important;
 }
 
 @media (min-width: 576px) {
