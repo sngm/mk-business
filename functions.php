@@ -152,3 +152,31 @@ function add_theme_data_attribute(): void
 		echo ' data-bs-theme="' . esc_attr($theme_mode) . '"';
 	}
 }
+
+/**
+ * Allow SVG upload for admins
+ */
+function mkb_allow_svg_upload($mimes)
+{
+	if (current_user_can('manage_options')) {
+		$mimes['svg'] = 'image/svg+xml';
+	}
+	return $mimes;
+}
+add_filter('upload_mimes', __NAMESPACE__ . '\mkb_allow_svg_upload');
+
+/**
+ * Sanitize SVG uploads (optional: restrict to admins)
+ */
+function mkb_check_svg_upload($file)
+{
+	if (
+		isset($file['type']) &&
+		$file['type'] === 'image/svg+xml' &&
+		!current_user_can('manage_options')
+	) {
+		$file['error'] = esc_html__('SVG uploads are only allowed for administrators.', 'mk-business');
+	}
+	return $file;
+}
+add_filter('wp_check_filetype_and_ext', __NAMESPACE__ . '\mkb_check_svg_upload', 10, 4);
