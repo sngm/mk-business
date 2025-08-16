@@ -57,7 +57,7 @@ if ($logo_url):
 ?>
                 
                 <!-- Theme Mode Toggle -->
-                <div class="mkb-theme-toggle ms-3">
+                <div class="mkb-theme-toggle ms-auto">
                     <button type="button" 
                             class="btn btn-outline-secondary" 
                             id="mkb-theme-toggle"
