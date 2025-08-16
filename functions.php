@@ -99,6 +99,23 @@ function customize_register(\WP_Customize_Manager $wp_customize): void
 		'mime_type' => 'image',
 	]));
 
+	// Logo Section
+	$wp_customize->add_section('mkb_logo', [
+		'title'    => esc_html__('Logo', 'mk-business'),
+		'priority' => 20,
+	]);
+
+	$wp_customize->add_setting('mkb_logo', [
+		'default'           => '',
+		'sanitize_callback' => 'absint',
+	]);
+
+	$wp_customize->add_control(new \WP_Customize_Media_Control($wp_customize, 'mkb_logo', [
+		'label'     => esc_html__('Logo', 'mk-business'),
+		'section'   => 'mkb_logo',
+		'mime_type' => 'image',
+	]));
+
 	// Theme Mode Section
 	$wp_customize->add_section('mkb_theme_mode', [
 		'title'    => esc_html__('Theme Mode', 'mk-business'),

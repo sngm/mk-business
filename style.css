@@ -8854,4 +8854,10 @@ textarea.form-control-lg {
   vertical-align: middle;
 }
 
+.mkb-logo {
+  max-width: 180px;
+  height: auto;
+  display: block;
+}
+
 /*# sourceMappingURL=style.css.map */

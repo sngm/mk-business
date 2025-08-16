@@ -22,10 +22,18 @@ if (!defined('ABSPATH')) {
 <header class="site-header">
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <?php if (has_custom_logo()): ?>
-                <div class="navbar-brand">
-                    <?php the_custom_logo(); ?>
-                </div>
+            <?php
+			$logo_id = get_theme_mod('mkb_logo');
+$logo_url = $logo_id ? wp_get_attachment_image_url($logo_id, 'full') : '';
+if ($logo_url):
+	?>
+                <a class="navbar-brand d-flex align-items-center" href="<?php echo esc_url(home_url('/')); ?>">
+                    <img src="<?php echo esc_url($logo_url); ?>"
+                         alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
+                         class="mkb-logo me-2"
+                         width="150"
+                         height="48">
+                </a>
             <?php else: ?>
                 <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">
                     <?php bloginfo('name'); ?>
@@ -38,14 +46,14 @@ if (!defined('ABSPATH')) {
 
             <div class="collapse navbar-collapse" id="primaryNav">
                 <?php
-				wp_nav_menu([
-					'theme_location' => 'primary',
-					'container'      => false,
-					'menu_class'     => 'navbar-nav me-auto',
-					'fallback_cb'    => false,
-					'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-					'depth'          => 2,
-				]);
+		wp_nav_menu([
+	'theme_location' => 'primary',
+	'container'      => false,
+	'menu_class'     => 'navbar-nav me-auto',
+	'fallback_cb'    => false,
+	'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+	'depth'          => 2,
+		]);
 ?>
                 
                 <!-- Theme Mode Toggle -->
