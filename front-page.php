@@ -12,7 +12,7 @@ get_header();
     <?php get_template_part('template-parts/hero-section'); ?>
 
     <!-- Feature Boxes -->
-    <section class="features py-5">
+    <section class="features bg-body-secondary py-5">
         <div class="container">
             <div class="text-center mb-5">
                 <h2>Wir erstellen Ihre nächste Website oder überarbeiten Ihre bestehende.</h2>
@@ -23,8 +23,15 @@ get_header();
         </div>
     </section>
 
+    <!-- CTA Section -->
+    <section class="cta py-5">
+        <div class="container">
+            <?php get_template_part('template-parts/cta-section'); ?>
+        </div>
+    </section>
+    
     <!-- Process Steps -->
-    <section class="process bg-body-secondary py-5">
+    <section class="process py-5">
         <div class="container">
             <h2 class="text-center mb-5">Neue Website - wie funktioniert das jetzt?</h2>
             <?php get_template_part('template-parts/process-steps'); ?>
@@ -32,12 +39,14 @@ get_header();
     </section>
 
     <!-- Services Grid -->
-    <section class="services py-5">
+    <section class="services bg-body-secondary py-5">
         <div class="container">
             <h2 class="text-center mb-5">Was wir noch alles für Sie tun können</h2>
             <?php get_template_part('template-parts/services-grid'); ?>
         </div>
     </section>
+
+
 
     <!-- FAQ Section -->
     <section class="faq bg-body-secondary py-5">
