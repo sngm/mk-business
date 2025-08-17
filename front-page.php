@@ -49,7 +49,7 @@ get_header();
 
 
     <!-- FAQ Section -->
-    <section class="faq bg-body-secondary py-5" id="faqs">
+    <section class="faq bg-body-tertiary py-5" id="faqs">
         <div class="container">
             <h2 class="text-center mb-5">FAQs zur Erstellung einer Website</h2>
             <?php get_template_part('template-parts/faq-accordion'); ?>
@@ -59,6 +59,7 @@ get_header();
     <!-- Contact Form -->
     <section class="contact py-5" id="kontakt">
         <div class="container">
+			<h2 class="text-center mb-5">Kontaktieren Sie uns</h2>
             <div class="row">
                 <div class="col-md-8">
                     <?php get_template_part('template-parts/contact-form'); ?>
