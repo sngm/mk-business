@@ -31,7 +31,7 @@ get_header();
     </section>
     
     <!-- Process Steps -->
-    <section class="process py-5">
+    <section class="process py-5" id="so-gehts">
         <div class="container">
             <h2 class="text-center mb-5">Neue Website - wie funktioniert das jetzt?</h2>
             <?php get_template_part('template-parts/process-steps'); ?>
@@ -39,7 +39,7 @@ get_header();
     </section>
 
     <!-- Services Grid -->
-    <section class="services bg-body-secondary py-5">
+    <section class="services bg-body-secondary py-5" id="leistungen">
         <div class="container">
             <h2 class="text-center mb-5">Was wir noch alles für Sie tun können</h2>
             <?php get_template_part('template-parts/services-grid'); ?>
@@ -49,7 +49,7 @@ get_header();
 
 
     <!-- FAQ Section -->
-    <section class="faq bg-body-secondary py-5">
+    <section class="faq bg-body-secondary py-5" id="faqs">
         <div class="container">
             <h2 class="text-center mb-5">FAQs zur Erstellung einer Website</h2>
             <?php get_template_part('template-parts/faq-accordion'); ?>
@@ -57,7 +57,7 @@ get_header();
     </section>
 
     <!-- Contact Form -->
-    <section id="contact" class="contact py-5">
+    <section class="contact py-5" id="kontakt">
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
