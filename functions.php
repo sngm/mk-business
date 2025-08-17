@@ -180,3 +180,25 @@ function mkb_check_svg_upload($file)
 	return $file;
 }
 add_filter('wp_check_filetype_and_ext', __NAMESPACE__ . '\mkb_check_svg_upload', 10, 4);
+
+/**
+ * Disable Block Editor for selected CPTs
+ *
+ * @param bool   $use_block_editor
+ * @param string $post_type
+ * @return bool
+ */
+function mkb_disable_block_editor_for_cpts($use_block_editor, $post_type)
+{
+	// CPTs für Classic Editor
+	$cpts = [
+		'faq',
+		// weitere CPTs hier ergänzen, z.B. 'portfolio', 'event'
+	];
+
+	if (in_array($post_type, $cpts, true)) {
+		return false;
+	}
+	return $use_block_editor;
+}
+add_filter('use_block_editor_for_post_type', __NAMESPACE__ . '\mkb_disable_block_editor_for_cpts', 10, 2);
