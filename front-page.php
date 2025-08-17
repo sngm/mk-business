@@ -15,7 +15,13 @@ get_header();
 	<section class="features bg-body-secondary py-5">
 		<div class="container">
 			<div class="text-center mb-5">
-				<h2>Wir erstellen Ihre nächste Website oder überarbeiten Ihre bestehende.</h2>
+				<h2>
+					<?php
+					$feature_group = get_field('feature_section', get_the_ID());
+$feature_headline = isset($feature_group['headline']) ? $feature_group['headline'] : '';
+echo esc_html($feature_headline ?: __('Wir erstellen Ihre nächste Website oder überarbeiten Ihre bestehende.', 'mk-business'));
+?>
+				</h2>
 			</div>
 			<div class="row">
 				<?php get_template_part('template-parts/feature-boxes'); ?>
@@ -33,7 +39,6 @@ get_header();
 	<!-- Process Steps -->
 	<section class="process py-5" id="so-gehts">
 		<div class="container">
-			<h2 class="text-center mb-5">Neue Website - wie funktioniert das jetzt?</h2>
 			<?php get_template_part('template-parts/process-steps'); ?>
 		</div>
 	</section>
@@ -74,3 +79,5 @@ get_header();
 
 <?php
 get_footer();
+get_footer();
+?>
