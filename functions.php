@@ -182,7 +182,7 @@ function mkb_check_svg_upload($file)
 add_filter('wp_check_filetype_and_ext', __NAMESPACE__ . '\mkb_check_svg_upload', 10, 4);
 
 /**
- * Disable Block Editor for selected CPTs
+ * Disable Block Editor for selected CPTs and the static front page
  *
  * @param bool   $use_block_editor
  * @param string $post_type
@@ -193,8 +193,17 @@ function mkb_disable_block_editor_for_cpts($use_block_editor, $post_type)
 	// CPTs für Classic Editor
 	$cpts = [
 		'faq',
+		'leistung',
 		// weitere CPTs hier ergänzen, z.B. 'portfolio', 'event'
 	];
+
+	// Prüfe, ob aktueller Beitrag die statische Startseite ist
+	if (is_admin() && isset($_GET['post'])) {
+		$front_page_id = (int) get_option('page_on_front');
+		if ($front_page_id && (int) $_GET['post'] === $front_page_id) {
+			return false;
+		}
+	}
 
 	if (in_array($post_type, $cpts, true)) {
 		return false;
