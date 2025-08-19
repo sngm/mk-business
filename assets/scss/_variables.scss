@@ -23,6 +23,8 @@ $btn-border-radius-sm: 50rem !default;
 $btn-border-radius-lg: 50rem !default;
 $btn-font-weight: 700 !default;
 
+$font-family-sans-serif: 'Inter Tight', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+
 // 3. Include Bootstrap variables AFTER our overrides
 @import "../../node_modules/bootstrap/scss/variables";
 @import "variables-dark";
