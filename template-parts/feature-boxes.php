@@ -26,7 +26,7 @@ $features = [
 
 foreach ($features as $feature): ?>
 	<div class="col-md-4 mb-4">
-		<div class="card h-100 border-0 shadow-lg rounded-4 bg-secondary mkb-service-card">
+		<div class="card h-100 border-0 rounded-4 bg-secondary bg-opacity-10 mkb-service-card">
 			<?php if (!empty($feature['image'])): ?>
 				<div class="p-4 pe-5">
 					<img src="<?php echo esc_url($feature['image']); ?>"
