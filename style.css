@@ -8962,14 +8962,13 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.card,
+/* .card,
 .service-item,
 .mkb-contact-form-wrapper,
 .mkb-contact-info {
-  background-color: #6c757d;
-  border: none;
-}
-
+	background-color: $secondary;
+	border: none;
+} */
 .features .card {
   transition: all 0.2s ease-in-out;
 }
