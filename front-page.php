@@ -66,10 +66,10 @@ echo esc_html($feature_headline ?: __('Wir erstellen Ihre nächste Website oder 
 		<div class="container">
 			<h2 class="text-center mb-5">Kontaktieren Sie uns</h2>
 			<div class="row">
-				<div class="col-md-8">
+				<div class="col-md-6">
 					<?php get_template_part('template-parts/contact-form'); ?>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-6">
 					<?php get_template_part('template-parts/contact-info'); ?>
 				</div>
 			</div>
