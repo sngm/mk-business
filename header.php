@@ -70,7 +70,3 @@ wp_nav_menu([
 		</div>
 	</nav>
 </header>
-
-
-
-<main id="main" class="site-main">

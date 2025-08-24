@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) {
 get_header();
 ?>
 
-<main id="primary" class="site-main">
+<main id="main" class="site-main">
 	<?php get_template_part('template-parts/hero-section'); ?>
 
 	<!-- Feature Boxes -->
