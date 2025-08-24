@@ -6,7 +6,7 @@ if (!defined('ABSPATH')) {
 }
 ?>
 
-<div class="card bg-secondary bg-opacity-10 mkb-contact-form-wrapper">
+<div class="card bg-secondary bg-opacity-10 border-0 mkb-contact-form-wrapper">
 	<div class="card-body p-4">
 		<h3 class="card-title"><?php echo esc_html__('Kontaktieren Sie uns', 'mk-business'); ?></h3>
 		<p class="mb-4"><?php echo esc_html__('Füllen Sie das Formular aus und wir melden uns zeitnah bei Ihnen.', 'mk-business'); ?></p>
