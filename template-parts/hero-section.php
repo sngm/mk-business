@@ -4,6 +4,25 @@ declare(strict_types=1);
 if (!defined('ABSPATH')) {
 	exit;
 }
+
+// Get featured image for current post
+$hero_img_id = get_theme_mod('hero_image');
+$hero_img_url = $hero_img_id ? wp_get_attachment_image_url($hero_img_id, 'full') : '';
+$hero_img_alt = $hero_img_id ? get_post_meta($hero_img_id, '_wp_attachment_image_alt', true) : '';
+
+if (!$hero_img_url) {
+	// fallback: use post thumbnail if available
+	if (has_post_thumbnail()) {
+		$hero_img_url = get_the_post_thumbnail_url(null, 'full');
+		$hero_img_alt = get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true);
+	}
+}
+
+if (!$hero_img_url) {
+	// fallback: use static placeholder
+	$hero_img_url = esc_url(get_theme_file_uri('dev_assets/medienberater-mit-kunde-lachelt-in-kamera.png'));
+	$hero_img_alt = esc_attr__('Zwei Personen arbeiten gemeinsam am Laptop', 'mk-business');
+}
 ?>
 
 <!-- Hero Section -->
@@ -35,8 +54,8 @@ if (!defined('ABSPATH')) {
 				</div>
 				<div class="col-lg-6 p-0">
 					<div class="hero-image h-100">
-						<img src="<?php echo esc_url(get_theme_file_uri('dev_assets/medienberater-mit-kunde-lachelt-in-kamera.png')); ?>" 
-							 alt="<?php echo esc_attr__('Zwei Personen arbeiten gemeinsam am Laptop', 'mk-business'); ?>"
+						<img src="<?php echo esc_url($hero_img_url); ?>"
+							 alt="<?php echo esc_attr($hero_img_alt); ?>"
 							 class="img-fluid w-100 h-100 object-fit-cover"
 							 loading="eager"
 							 decoding="async"
