@@ -26,6 +26,7 @@ function theme_setup(): void
 
 	register_nav_menus([
 		'primary' => esc_html__('Primary Menu', 'mk-business'),
+		'footer'  => esc_html__('Footer Menu', 'mk-business'),
 	]);
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\theme_setup');
