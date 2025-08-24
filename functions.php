@@ -117,6 +117,19 @@ function customize_register(\WP_Customize_Manager $wp_customize): void
 		'mime_type' => 'image',
 	]));
 
+	// Checkbox: Output SVG as code
+	$wp_customize->add_setting('mkb_logo_svg_inline', [
+		'default'           => false,
+		'sanitize_callback' => 'rest_sanitize_boolean',
+	]);
+
+	$wp_customize->add_control('mkb_logo_svg_inline', [
+		'label'       => esc_html__('Output SVG as inline code', 'mk-business'),
+		'description' => esc_html__('If enabled and the logo is an SVG, outputs the SVG code instead of an <img> tag.', 'mk-business'),
+		'section'     => 'mkb_logo',
+		'type'        => 'checkbox',
+	]);
+
 	// Theme Mode Section
 	$wp_customize->add_section('mkb_theme_mode', [
 		'title'    => esc_html__('Theme Mode', 'mk-business'),
@@ -215,3 +228,6 @@ add_filter('use_block_editor_for_post_type', __NAMESPACE__ . '\mkb_disable_block
 
 // JetFormBuilder Bootstrap Integration
 require_once get_theme_file_path('inc/mkb-jetFormBuilder.php');
+
+// Logo helper
+require_once get_theme_file_path('inc/mkb-logo.php');
