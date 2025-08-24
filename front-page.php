@@ -37,14 +37,14 @@ echo esc_html($feature_headline ?: __('Wir erstellen Ihre nächste Website oder 
 	</section>
 	
 	<!-- Process Steps -->
-	<section class="process py-5" id="so-gehts">
+	<section class="process bg-body-secondary py-5" id="so-gehts">
 		<div class="container">
 			<?php get_template_part('template-parts/process-steps'); ?>
 		</div>
 	</section>
 
 	<!-- Services Grid -->
-	<section class="services bg-body-secondary py-5" id="leistungen">
+	<section class="services py-5" id="leistungen">
 		<div class="container">
 			<h2 class="text-center mb-5">Was wir noch alles für Sie tun können</h2>
 			<?php get_template_part('template-parts/services-grid'); ?>
@@ -54,7 +54,7 @@ echo esc_html($feature_headline ?: __('Wir erstellen Ihre nächste Website oder 
 
 
 	<!-- FAQ Section -->
-	<section class="faq bg-body-tertiary py-5" id="faqs">
+	<section class="faq bg-body-secondary py-5" id="faqs">
 		<div class="container">
 			<h2 class="text-center mb-5">FAQs zur Erstellung einer Website</h2>
 			<?php get_template_part('template-parts/faq-accordion'); ?>
@@ -78,6 +78,5 @@ echo esc_html($feature_headline ?: __('Wir erstellen Ihre nächste Website oder 
 </main>
 
 <?php
-get_footer();
 get_footer();
 ?>
