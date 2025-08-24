@@ -211,3 +211,6 @@ function mkb_disable_block_editor_for_cpts($use_block_editor, $post_type)
 	return $use_block_editor;
 }
 add_filter('use_block_editor_for_post_type', __NAMESPACE__ . '\mkb_disable_block_editor_for_cpts', 10, 2);
+
+// JetFormBuilder Bootstrap Integration
+require_once get_theme_file_path('inc/mkb-jetFormBuilder.php');
