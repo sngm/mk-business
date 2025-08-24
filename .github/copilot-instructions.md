@@ -22,6 +22,7 @@
 - Textdomain: `mk-business`.
 - Keine Logik direkt in `functions.php`; nur Bootstrapping.
 - Template-Hierarchie einhalten (WordPress Template Hierarchy).
+- Kommentare immer in englisch
 
 ## Codestil
 - PSR-12, Tabs (4 Spaces).
