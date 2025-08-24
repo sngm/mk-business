@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) {
 		
 		<div class="mkb-form-placeholder">
 			<!-- JetFormBuilder Shortcode wird hier eingefügt -->
-			<?php echo do_shortcode('[jet_fb_form form_id="127" submit_type="reload" required_mark="*" fields_layout="column" fields_label_tag="div" markup_type="div" enable_progress="" clear=""]'); ?>
+			<?php echo do_shortcode('[jet_fb_form form_id="127" submit_type="reload" required_mark="*" fields_layout="column" fields_label_tag="label" markup_type="div" enable_progress="" clear=""]'); ?>
 		</div>
 		<a href="#" class="btn btn-primary mt-4"><?php echo esc_html__('Absenden', 'mk-business'); ?></a>
 	</div>
