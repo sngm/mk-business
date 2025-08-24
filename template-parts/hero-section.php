@@ -31,21 +31,36 @@ if (!$hero_img_url) {
 		<div class="hero-card bg-primary text-white rounded-4">
 			<div class="row align-items-center">
 				<div class="col-lg-6">
-					<div class="hero-content p-4">
-						<h1 class="display-4 fw-bold mb-4">
-							<?php echo esc_html__('Websites & Online-Shops', 'mk-business'); ?>
+					<div class="hero-content p-5">
+						<h1 class="display-3 mb-4">
+							<?php echo esc_html(get_the_title()); ?>
 						</h1>
-						<ul class="hero-features list-unstyled mb-4">
-							<li class="mb-3">
-								<span class="fs-6"><?php echo esc_html__('Ihr Internetauftritt', 'mk-business'); ?></span>
-							</li>
-							<li class="mb-3">
-								<span class="fs-6"><?php echo esc_html__('Ihre Serviceleistungen', 'mk-business'); ?></span>
-							</li>
-							<li class="mb-3">
-								<span class="fs-6"><?php echo esc_html__('Ihre Akquise und Projekte', 'mk-business'); ?></span>
-							</li>
-						</ul>
+						<?php
+							// Output page content, safely escaped
+							echo wp_kses_post(get_the_content());
+// Get Hero Section group via ACF
+$hero_section = get_field('hero_section');
+$teaser_text = !empty($hero_section['hero_section_teaser_text']) ? $hero_section['hero_section_teaser_text'] : '';
+$teaser_list = !empty($hero_section['hero_section_teaser_list']) && is_array($hero_section['hero_section_teaser_list']) ? $hero_section['hero_section_teaser_list'] : [];
+
+if ($teaser_text || $teaser_list) {
+	echo '<div class="mb-4">';
+	if ($teaser_list) {
+		echo '<ul class="mkb-hero-steps hero-features list-unstyled">';
+		foreach ($teaser_list as $idx => $item) {
+			$list_point = isset($item['hero_section_list_point']) ? $item['hero_section_list_point'] : '';
+			if ($list_point) {
+				echo '<li class="mkb-step-text fs-5 fw-medium mb-2">' . esc_html($list_point) . '</li>';
+			}
+		}
+		echo '</ul>';
+	}
+	if ($teaser_text) {
+		echo '<p class="lead">' . esc_html($teaser_text) . '</p>';
+	}
+	echo '</div>';
+}
+?>
 						<a href="#contact" 
 						   class="btn btn-light btn-lg px-4 py-3">
 							<?php echo esc_html__('Kontakt aufnehmen', 'mk-business'); ?>
