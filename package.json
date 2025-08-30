@@ -2,16 +2,22 @@
 	"name": "mk-business",
 	"version": "1.0.0",
 	"private": true,
+	"type": "module",
 	"scripts": {
 		"sass:dev": "sass assets/scss/theme.scss:style.css --source-map --watch --quiet-deps",
 		"sass:build": "sass assets/scss/theme.scss:style.css --style=compressed --no-source-map --quiet-deps",
-		"build": "npm run sass:build"
+		"js:dev": "vite",
+		"js:build": "vite build",
+		"dev": "concurrently \"npm run sass:dev\" \"npm run js:dev\"",
+		"build": "npm run sass:build && npm run js:build"
 	},
 	"dependencies": {
 		"bootstrap": "^5.3.2",
 		"bootstrap-icons": "^1.11.3"
 	},
 	"devDependencies": {
-		"sass": "^1.69.5"
+		"concurrently": "^8.2.2",
+		"sass": "^1.69.5",
+		"vite": "^5.0.11"
 	}
 }

@@ -44,7 +44,7 @@ function enqueue_assets(): void
 		filemtime(get_theme_file_path('style.css'))
 	);
 
-	// Register Bootstrap Icons CSS - now from local node_modules
+	// Register Bootstrap Icons CSS
 	wp_register_style(
 		'mkb-bootstrap-icons',
 		get_theme_file_uri('node_modules/bootstrap-icons/font/bootstrap-icons.min.css'),
@@ -52,28 +52,18 @@ function enqueue_assets(): void
 		filemtime(get_theme_file_path('node_modules/bootstrap-icons/font/bootstrap-icons.min.css'))
 	);
 
-	// Register Bootstrap Bundle (includes Popper) - now from local node_modules
-	wp_register_script(
-		'mkb-bootstrap',
-		get_theme_file_uri('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'),
-		[],
-		filemtime(get_theme_file_path('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js')),
-		['in_footer' => true, 'strategy' => 'defer']
-	);
-
-	// Register Theme JavaScript
+	// Register bundled Theme JavaScript (includes Bootstrap)
 	wp_register_script(
 		'mkb-theme',
-		get_theme_file_uri('assets/js/theme.js'),
+		get_theme_file_uri('assets/dist/js/theme.js'),
 		[],
-		filemtime(get_theme_file_path('assets/js/theme.js')),
+		filemtime(get_theme_file_path('assets/dist/js/theme.js')),
 		['in_footer' => true, 'strategy' => 'defer']
 	);
 
 	// Enqueue all assets
 	wp_enqueue_style('mkb-style');
 	wp_enqueue_style('mkb-bootstrap-icons');
-	wp_enqueue_script('mkb-bootstrap');
 	wp_enqueue_script('mkb-theme');
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets');
