@@ -1,0 +1,35 @@
+/**
+ * MK Business Theme - Main Stylesheet
+ * Version: 1.0.0
+ * Description: A WordPress theme for businesses using Bootstrap 5
+ * Author: MK Business
+ * License: GPL-2.0+
+ */
+
+@import "variables";
+@import "fonts/inter-v19-latin";
+@import "fonts/inter-tight-v8-latin";
+
+// Bootstrap components
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/type";
+@import "../../node_modules/bootstrap/scss/containers";
+@import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/card";
+@import "../../node_modules/bootstrap/scss/buttons";
+@import "../../node_modules/bootstrap/scss/nav";
+@import "../../node_modules/bootstrap/scss/navbar";
+@import "../../node_modules/bootstrap/scss/accordion";
+@import "../../node_modules/bootstrap/scss/forms";
+@import "../../node_modules/bootstrap/scss/transitions";
+
+// Bootstrap utilities API
+@import "../../node_modules/bootstrap/scss/utilities/api";
+
+// Import theme components
+@import "components/feature-cards";
+@import "components/process-steps";
+@import "components/hero";
+@import "components/accessibility";
+@import "components/theme-toggle";

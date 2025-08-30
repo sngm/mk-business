@@ -36,12 +36,12 @@ add_action('after_setup_theme', __NAMESPACE__ . '\theme_setup');
  */
 function enqueue_assets(): void
 {
-	// Register Theme CSS (compiled from SCSS)
+	// Register main CSS (compiled by Vite)
 	wp_register_style(
 		'mkb-style',
-		get_theme_file_uri('style.css'),
+		get_theme_file_uri('assets/dist/css/styles.css'),
 		[],
-		filemtime(get_theme_file_path('style.css'))
+		filemtime(get_theme_file_path('assets/dist/css/styles.css'))
 	);
 
 	// Register Bootstrap Icons CSS

@@ -1,0 +1,22 @@
+// Process Steps Component
+
+.mkb-process-step {
+	transition: $transition-base;
+
+	&:hover {
+		transform: translateX(10px);
+	}
+
+	.step-number {
+		font-size: 5rem;
+		font-weight: bold;
+		line-height: 1;
+		color: white; // Always white for contrast on colored backgrounds
+	}
+
+	@each $step, $opacity in $process-step-opacity {
+		&.process-step-#{$step} {
+			background-color: rgba($primary, $opacity);
+		}
+	}
+}

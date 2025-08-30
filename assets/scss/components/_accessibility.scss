@@ -1,0 +1,49 @@
+// Accessibility Component
+
+// Skip link
+.skip-link {
+	position: absolute;
+	top: -100px;
+	left: 0;
+	background: $primary;
+	color: white;
+	padding: 10px;
+	z-index: 1050;
+
+	&:focus {
+		top: 0;
+	}
+}
+
+// Reduced Motion
+@media (prefers-reduced-motion: reduce) {
+
+	*,
+	*::before,
+	*::after {
+		transition: none !important;
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+	}
+
+	.features .card,
+	.mkb-process-step,
+	.mkb-form-input,
+	.mkb-form-textarea,
+	.mkb-form-submit {
+		transition: none !important;
+	}
+
+	.mkb-fade-in {
+		animation: none !important;
+		opacity: 1 !important;
+		transform: none !important;
+	}
+}
+
+// Focus styles
+:focus-visible {
+	outline: 3px solid $primary;
+	outline-offset: 2px;
+}
