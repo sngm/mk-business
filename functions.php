@@ -44,20 +44,20 @@ function enqueue_assets(): void
 		filemtime(get_theme_file_path('style.css'))
 	);
 
-	// Register Bootstrap Icons CSS
+	// Register Bootstrap Icons CSS - now from local node_modules
 	wp_register_style(
 		'mkb-bootstrap-icons',
-		'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css',
+		get_theme_file_uri('node_modules/bootstrap-icons/font/bootstrap-icons.min.css'),
 		[],
-		'1.11.3'
+		filemtime(get_theme_file_path('node_modules/bootstrap-icons/font/bootstrap-icons.min.css'))
 	);
 
-	// Register Bootstrap Bundle (includes Popper)
+	// Register Bootstrap Bundle (includes Popper) - now from local node_modules
 	wp_register_script(
 		'mkb-bootstrap',
-		'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js',
+		get_theme_file_uri('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'),
 		[],
-		'5.3.2',
+		filemtime(get_theme_file_path('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js')),
 		['in_footer' => true, 'strategy' => 'defer']
 	);
 
