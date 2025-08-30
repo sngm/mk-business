@@ -6,6 +6,9 @@
 // Import Bootstrap JS (all components)
 import 'bootstrap';
 
+// Import all fonts
+import './fonts';
+
 // Import our theme modules
 import { ThemeMode } from './modules/theme-mode';
 import { initFeatureCards } from './modules/animations';
@@ -23,3 +26,7 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () 
         new ThemeMode().applyStoredTheme();
     }
 });
+    const storedTheme = localStorage.getItem('mkb-theme-mode');
+    if (!storedTheme) {
+        new ThemeMode().applyStoredTheme();
+    }

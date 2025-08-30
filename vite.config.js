@@ -17,6 +17,12 @@ export default defineConfig({
           if (/\.css$/.test(name ?? '')) {
             return 'css/[name][extname]';
           }
+          
+          // Handle font files
+          if (/\.(woff|woff2|eot|ttf|otf)$/.test(name ?? '')) {
+            return 'fonts/[name][extname]';
+          }
+          
           return 'assets/[name][extname]';
         }
       }
